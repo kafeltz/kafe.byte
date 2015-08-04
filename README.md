@@ -1,2 +1,2 @@
 # kafe.byte
-Format kbyte and mbyte to portugues(brazil) human format in a super simple solution
+Format kbyte and mbyte to portuguese(brazil) human format in a super simple solution
