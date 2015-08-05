@@ -2,9 +2,14 @@ function humanize_file_size( bytes )
 {
 	var kbyte = 1024;
 	var mbyte = kbyte * 1024;
+    var gbyte = mbyte * 1024;
 
 	// format to mbyte
-	if (bytes >= mbyte)
+    if (bytes >= gbyte)
+    {
+        return (bytes / gbyte).toFixed(1).replace(".", ",") + "Gb";
+    }
+	else if (bytes >= mbyte)
 	{
 		return (bytes / mbyte).toFixed(1).replace(".", ",") + "Mb";
 	}
@@ -14,10 +19,3 @@ function humanize_file_size( bytes )
 		return (bytes / kbyte).toFixed(1).replace(".", ",")	 + "Kb";
 	}
 }
-
-// console.info( humanize_file_size( 984064 ) );
-// console.info( humanize_file_size( 3884 ) );
-// console.info( humanize_file_size( 32255 ) );
-// console.info( humanize_file_size( 16045 ) );
-// console.info( humanize_file_size( 2250 ) );
-// console.info( humanize_file_size( 9173510 ) );
